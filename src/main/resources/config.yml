@@ -1,0 +1,15 @@
+version: 1.0.0
+
+enabled_worlds:
+  # /spawn
+  spawn:
+    - world
+    - world_nether
+    - world_the_end
+  # /home and /sethome
+  home:
+    - world
+    - world_nether
+    - world_the_end
+
+homes: ''

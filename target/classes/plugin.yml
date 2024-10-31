@@ -1,0 +1,58 @@
+name: ReturnToSpawn
+main: org.harutori.returntospawn.Core
+version: 1.0.0
+api-version: 1.21
+author: vostok061
+website: https://harutori.org/
+
+commands:
+  spawn:
+    description: Return to the Spawn Point of the world
+  sethome:
+    description: Set Player's Home Point in the world
+  home:
+    description: Return to Player's Home Point of the world
+  rts:
+    description: Add/Remove world(s) to /spawn, /home or /sethome command
+
+permissions:
+  returntospawn.*:
+    description: Root Permission of ReturnToSpawn
+    default: true
+    children:
+      returntospawn.spawn: true
+      returntospawn.sethome: true
+      returntospawn.home: true
+      returntospawn.addworld.*: true
+      returntospawn.removeworld.*: true
+  returntospawn.spawn:
+    description: Command /spawn
+    default: true
+  returntospawn.sethome:
+    description: Command /sethome
+    default: true
+  returntospawn.home:
+    description: Command /home
+    default: true
+  returntospawn.addworld.*:
+    default: true
+    children:
+      returntospawn.addworld.spawn: true
+      returntospawn.addworld.home: true
+  returntospawn.addworld.spawn:
+    description: Command /rts addworld spawn ~
+    default: op
+  returntospawn.addworld.home:
+    description: Command /rts addworld home ~
+    default: op
+  returntospawn.removeworld.*:
+    default: true
+    children:
+      returntospawn.removeworld.spawn: true
+      returntospawn.removeworld.home: true
+  returntospawn.removeworld.spawn:
+    description: Command /rts removeworld spawn ~
+    default: op
+  returntospawn.removeworld.home:
+    description: Command /rts removeworld home ~
+    default: op
